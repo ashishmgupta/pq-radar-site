@@ -124,6 +124,22 @@ section:last-child {
   .hero-row {
     grid-template-columns: 1fr;
   }
+
+  /* Mobile-only overrides below — desktop rules above are untouched.
+   * #brand is fixed at top:20px and ~29px tall; #banner's desktop
+   * padding-top (32px) isn't enough clearance once the centered h1
+   * wraps close to the top-left corner at narrow widths. */
+  #banner {
+    padding-top: 68px;
+  }
+
+  #banner h1 {
+    font-size: 24px;
+  }
+
+  #banner p {
+    font-size: 14px;
+  }
 }
 
 .player-frame {

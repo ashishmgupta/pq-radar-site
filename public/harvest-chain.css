@@ -238,3 +238,19 @@
   #harvest .burst-wire2  { transform: translate(545px, 100px); }
   #harvest .burst-lb     { transform: translate(730px, 100px); }
 }
+
+/* Mobile-only overrides below — desktop rules above are untouched.
+ * The diagram's connectors (wire path, drop-lines) are baked-in SVG
+ * geometry, not CSS-overridable, so a true vertical reflow isn't safe
+ * as a CSS-only change. Scale-to-fit instead: dropping the min-width
+ * floor lets the whole SVG (already width:100%; height:auto) shrink
+ * proportionally so nothing clips and there's no horizontal scroll. */
+@media (max-width: 760px) {
+  #harvest .harvest-intro {
+    font-size: 13px;
+  }
+
+  #harvest .diagram-wrap {
+    min-width: 0;
+  }
+}
