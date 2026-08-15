@@ -78,6 +78,17 @@ section:last-child {
  * on mobile via a shared, non-semantic grid wrapper (.hero-row) around both.
  * Each section keeps its own id so CSS/content still map 1:1; the wrapper
  * only handles the responsive pairing. */
+.hero-heading {
+  margin: 0;
+  padding: 40px 24px 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--fg-dim);
+}
+
 .hero-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
