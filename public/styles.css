@@ -47,16 +47,16 @@ section:last-child {
   z-index: 10;
 }
 
-/* 1. Banner — headline + one line, nothing else. */
+/* 1. Banner — headline + one line, nothing else. Fixed padding, not
+ * viewport-relative height — min-height:22vh left a lot of dead air on
+ * tall windows since it scaled with viewport, not content. */
 #banner {
-  min-height: 22vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
   gap: 16px;
-  padding-bottom: 24px;
+  padding: 56px 24px 40px;
 }
 
 #banner h1 {
