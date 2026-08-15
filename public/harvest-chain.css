@@ -12,7 +12,7 @@
 }
 
 #harvest .harvest-intro {
-  margin: 0 auto 16px;
+  margin: 0 auto 12px;
   max-width: 56ch;
   color: var(--fg-dim);
   font-size: 15px;
