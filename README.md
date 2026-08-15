@@ -17,25 +17,35 @@ Why this matters:
 ## Structure
 
 ```
-index.html              Single-page site: banner, two-player demo, "why" section
-styles.css               Page layout (colors for the verdict live separately, in player/theme.css)
-casts/
-  green.cast              Recorded handshake — PQ-negotiated
-  red.cast                 Recorded handshake — classical fallback
-player/
-  asciinema-player.min.js  Vendored asciinema player (self-hosted, no CDN dependency at runtime)
-  asciinema-player.css     Player's own base styles
-  theme.css                 Red/green verdict theme, driven by ANSI codes in the recordings
+wrangler.jsonc            Workers static-assets config (assets.directory -> public/)
+public/
+  index.html               Single-page site: banner, two-player demo, "why" section
+  styles.css                Page layout (colors for the verdict live separately, in player/theme.css)
+  casts/
+    green.cast               Recorded handshake — PQ-negotiated
+    red.cast                  Recorded handshake — classical fallback
+  player/
+    asciinema-player.min.js   Vendored asciinema player (self-hosted, no CDN dependency at runtime)
+    asciinema-player.css      Player's own base styles
+    theme.css                  Red/green verdict theme, driven by ANSI codes in the recordings
 ```
 
-The page is static — no build step, no server-side code, no dependencies to install. Serve the directory as-is with any static file host.
+The page is static — no build step, no server-side code, no dependencies to install.
 
 ## Running locally
 
 ```bash
-npx serve .
+npx serve public
 # or
-python3 -m http.server 8000
+python3 -m http.server 8000 --directory public
 ```
 
 Then open `http://localhost:<port>/`.
+
+## Deploying
+
+Served at [pqradar.net](https://pqradar.net) by a Cloudflare Worker (`pq-radar-site`) using [Workers Static Assets](https://developers.cloudflare.com/workers/static-assets/) — not Cloudflare Pages.
+
+```bash
+npx wrangler deploy
+```
