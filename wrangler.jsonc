@@ -1,0 +1,9 @@
+{
+  "name": "pq-radar-site",
+  "account_id": "02fab3c83f2f24ed8457a7575fe03150",
+  "compatibility_date": "2026-08-14",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+}
