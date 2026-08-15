@@ -33,7 +33,7 @@
 <!-- 1.5. Harvest Chain: the mechanism behind the headline, before the
      demo makes it concrete. Own stylesheet, own scoped colors/keyframes. -->
 <section id="harvest">
-  <p class="harvest-intro">Two different attackers, two different windows: one taps the wire and records ciphertext to decrypt whenever it's convenient later. One sits inside a hop that terminates TLS and reads plaintext the moment it arrives.</p>
+  <p class="harvest-intro">Every hop below sees your PII in the clear. An attacker doesn't need to break the encryption today — recording the traffic now and decrypting it once a quantum computer exists works just as well.</p>
 
   <figure role="img" aria-label="Diagram showing a request travel from a user through an edge CDN, then into a datacenter containing a load balancer and an origin app. An attacker taps the wire between the user and the edge, and again between the edge and the datacenter, harvesting encrypted traffic to decrypt later. A third attacker sits at the load balancer inside the datacenter, harvesting plaintext the instant it decrypts. The edge and origin app hops also flash red on decrypt, showing the same exposure without a separate attacker icon.">
     <div class="diagram-wrap">
