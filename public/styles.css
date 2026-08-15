@@ -73,6 +73,17 @@ section:last-child {
   font-size: 16px;
 }
 
+#banner p a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 2px;
+}
+
+#banner p a:hover {
+  text-decoration-color: var(--fg-dim);
+}
+
 /* 2 + 3. Demo (green, the hero) and Contrast (red) — kept as two separate
  * <section> elements per spec, laid out side-by-side on desktop and stacked
  * on mobile via a shared, non-semantic grid wrapper (.hero-row) around both.
