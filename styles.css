@@ -1,0 +1,136 @@
+/* PQ Radar — page layout only. No color decisions live here beyond the
+ * base terminal dark/light values; the red/green verdict colors are in
+ * /player/theme.css, kept separate on purpose. */
+
+:root {
+  --bg: #0a0a0a;
+  --fg: #d6d6d6;
+  --fg-dim: #8a8a8a;
+  --border: #2a2a2a;
+  --mono: ui-monospace, "Cascadia Code", "SF Mono", Consolas, "DejaVu Sans Mono", monospace;
+  --gap: 24px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--mono);
+}
+
+body {
+  line-height: 1.5;
+}
+
+section {
+  padding: 64px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+/* 1. Banner — headline + one line, nothing else. */
+#banner {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+#banner h1 {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+#banner p {
+  margin: 0;
+  max-width: 56ch;
+  color: var(--fg-dim);
+  font-size: 16px;
+}
+
+/* 2 + 3. Demo (green, the hero) and Contrast (red) — kept as two separate
+ * <section> elements per spec, laid out side-by-side on desktop and stacked
+ * on mobile via a shared, non-semantic grid wrapper (.hero-row) around both.
+ * Each section keeps its own id so CSS/content still map 1:1; the wrapper
+ * only handles the responsive pairing. */
+.hero-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  padding: 64px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-row #demo,
+.hero-row #contrast {
+  padding: 0;
+  border-bottom: none;
+}
+
+@media (max-width: 760px) {
+  .hero-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.player-frame {
+  width: 100%;
+  border: 1px solid var(--border);
+}
+
+/* 4. Why — short lines, no long paragraphs. */
+#why {
+  max-width: 68ch;
+  margin: 0 auto;
+}
+
+#why ul {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+}
+
+#why li {
+  padding: 10px 0 10px 20px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+#why li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--fg-dim);
+}
+
+#why li:last-child {
+  border-bottom: none;
+}
+
+#why .honesty {
+  color: var(--fg-dim);
+  font-style: italic;
+}
+
+#why a.repo-link {
+  display: inline-block;
+  color: var(--fg);
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  text-decoration: none;
+}
+
+#why a.repo-link:hover {
+  border-color: var(--fg-dim);
+}

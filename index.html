@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PQ Radar</title>
+<meta name="description" content="A network-level post-quantum TLS readiness scanner. Is your traffic actually protected?">
+
+<!-- Page layout only — no color decisions here. -->
+<link rel="stylesheet" href="/styles.css">
+
+<!-- Self-hosted asciinema player (vendored, no CDN dependency at runtime). -->
+<link rel="stylesheet" href="/player/asciinema-player.css">
+<!-- Verdict color theme (red/green) lives entirely here — tune the colors
+     without touching layout or re-recording the casts. -->
+<link rel="stylesheet" href="/player/theme.css">
+</head>
+<body>
+
+<!-- 1. Banner: headline + one line. Nothing else. -->
+<section id="banner">
+  <h1>Harvest now, decrypt later.</h1>
+  <p>The traffic you send today can be stored and broken tomorrow. PQ Radar tells you if yours is actually protected.</p>
+</section>
+
+<!-- 2 + 3. Demo (green, the hero) and Contrast (red) — separate sections,
+     paired side-by-side on desktop / stacked on mobile via .hero-row. -->
+<div class="hero-row">
+  <section id="demo">
+    <div class="player-frame" id="player-green"></div>
+  </section>
+
+  <section id="contrast">
+    <div class="player-frame" id="player-red"></div>
+  </section>
+</div>
+
+<!-- 4. Why: short lines, then a repo link. -->
+<section id="why">
+  <ul>
+    <li>Harvest-now-decrypt-later is a real, present threat.</li>
+    <li>The fix (hybrid ML-KEM) is free and safe to deploy — it fails back to classical automatically, so nothing breaks.</li>
+    <li>The only remaining question is whether it's actually turned on and actually negotiating.</li>
+    <li class="honesty">It's just an OpenSSL handshake. That's the point.</li>
+  </ul>
+  <a class="repo-link" href="https://github.com/ashishmgupta/pq-radar-site">View on GitHub →</a>
+</section>
+
+<!-- Self-hosted player bundle (IIFE — exposes the global AsciinemaPlayer). -->
+<script src="/player/asciinema-player.min.js"></script>
+<script>
+  // Both players share one theme (player/theme.css) — the recording itself
+  // decides whether green or red shows, via the ANSI color codes it emits
+  // (\x1b[32m vs \x1b[31m). autoplay+loop+controls:false keeps this a silent,
+  // looping demo rather than an interactive terminal.
+  var demoOpts = {
+    autoplay: true,
+    loop: true,
+    controls: false,
+    theme: "pqradar"
+  };
+
+  AsciinemaPlayer.create("/casts/green.cast", document.getElementById("player-green"), demoOpts);
+  AsciinemaPlayer.create("/casts/red.cast", document.getElementById("player-red"), demoOpts);
+</script>
+</body>
+</html>

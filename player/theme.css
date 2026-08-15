@@ -1,0 +1,35 @@
+/* PQ Radar player theme — the ONLY place the red/green verdict colors live.
+ * Tune these to change the on-screen color without touching the .cast
+ * recordings or styles.css. Both players use this same theme; which color
+ * shows up depends on which ANSI code (\x1b[32m green / \x1b[31m red) the
+ * recording itself emits — not on which theme is loaded.
+ *
+ * Variable names and the .asciinema-player-theme-<name> class convention
+ * are the player's own custom-theme mechanism (see
+ * https://docs.asciinema.org/manual/player/themes/). Applied via
+ * `theme: "pqradar"` in the init options in index.html.
+ */
+.asciinema-player-theme-pqradar {
+  --term-color-foreground: #d6d6d6;
+  --term-color-background: #0a0a0a;
+
+  /* Standard 0-7 */
+  --term-color-0: #0a0a0a;  /* black */
+  --term-color-1: #ff4d4f;  /* red — the downgrade verdict */
+  --term-color-2: #2ecc71;  /* green — the PQ-positive verdict */
+  --term-color-3: #d6b83a;  /* yellow */
+  --term-color-4: #4d8fd6;  /* blue */
+  --term-color-5: #b06fd6;  /* magenta */
+  --term-color-6: #4dc4d6;  /* cyan */
+  --term-color-7: #d6d6d6;  /* white */
+
+  /* Bright 8-15 */
+  --term-color-8: #4a4a4a;
+  --term-color-9: #ff7a7c;   /* bright red */
+  --term-color-10: #58e08c;  /* bright green */
+  --term-color-11: #e0cc6a;
+  --term-color-12: #7ab0e0;
+  --term-color-13: #cc9ae0;
+  --term-color-14: #7adde0;
+  --term-color-15: #ffffff;
+}
