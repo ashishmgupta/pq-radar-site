@@ -34,15 +34,29 @@ section:last-child {
   border-bottom: none;
 }
 
+/* Brand mark — fixed top-left, out of document flow so it doesn't
+ * affect banner centering or spacing. */
+#brand {
+  position: fixed;
+  top: 20px;
+  left: 24px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: var(--fg-dim);
+  z-index: 10;
+}
+
 /* 1. Banner — headline + one line, nothing else. */
 #banner {
-  min-height: 40vh;
+  min-height: 22vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   gap: 16px;
+  padding-bottom: 24px;
 }
 
 #banner h1 {
@@ -68,7 +82,7 @@ section:last-child {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--gap);
-  padding: 64px 24px;
+  padding: 24px 24px 64px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -76,6 +90,23 @@ section:last-child {
 .hero-row #contrast {
   padding: 0;
   border-bottom: none;
+}
+
+.panel-heading {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#demo .panel-heading {
+  color: #2ecc71;
+}
+
+#contrast .panel-heading {
+  color: #ff4d4f;
 }
 
 @media (max-width: 760px) {

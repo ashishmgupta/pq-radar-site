@@ -17,6 +17,8 @@
 </head>
 <body>
 
+<header id="brand">PQRADAR</header>
+
 <!-- 1. Banner: headline + one line. Nothing else. -->
 <section id="banner">
   <h1>Harvest now, decrypt later.</h1>
@@ -27,10 +29,12 @@
      paired side-by-side on desktop / stacked on mobile via .hero-row. -->
 <div class="hero-row">
   <section id="demo">
+    <h2 class="panel-heading">PQA-ready endpoint</h2>
     <div class="player-frame" id="player-green"></div>
   </section>
 
   <section id="contrast">
+    <h2 class="panel-heading">Not PQA-ready endpoint</h2>
     <div class="player-frame" id="player-red"></div>
   </section>
 </div>
@@ -57,7 +61,8 @@
     autoplay: true,
     loop: true,
     controls: false,
-    theme: "pqradar"
+    theme: "pqradar",
+    speed: 0.75
   };
 
   AsciinemaPlayer.create("/casts/green.cast", document.getElementById("player-green"), demoOpts);
