@@ -107,26 +107,19 @@
         <!-- chips -->
         <g transform="translate(90,160)">
           <rect class="chip-rect" x="-58" y="-32" width="116" height="64" rx="8" />
-          <text class="chip-label" y="-2">User</text>
-          <text class="chip-sub" y="14">request</text>
+          <text class="chip-label" y="4">User</text>
         </g>
 
         <g class="checkpoint edge" transform="translate(390,160)">
           <rect class="chip-rect" x="-70" y="-32" width="140" height="64" rx="8" />
-          <text class="chip-label" y="-2">Edge / CDN</text>
-          <text class="chip-sub" y="14">TLS terminates here</text>
         </g>
 
         <g class="checkpoint lb" transform="translate(730,160)">
           <rect class="chip-rect" x="-74" y="-32" width="148" height="64" rx="8" />
-          <text class="chip-label" y="-2">Load Balancer</text>
-          <text class="chip-sub" y="14">TLS terminates here</text>
         </g>
 
         <g class="checkpoint origin" transform="translate(970,160)">
           <rect class="chip-rect" x="-70" y="-32" width="140" height="64" rx="8" />
-          <text class="chip-label" y="-2">Origin App</text>
-          <text class="chip-sub" y="14">TLS terminates here</text>
         </g>
 
         <!-- traveling packet -->
@@ -136,16 +129,7 @@
 
       </svg>
     </div>
-    <figcaption>
-      <strong>Two attacks, not one.</strong> The <span class="amber">amber</span> taps sit on the wire between hops — they can't read the request, but they don't need to: they harvest the ciphertext now and decrypt it once it's convenient later. The <span class="amber">amber</span> attacker at the Load Balancer sits inside a hop itself, harvesting plaintext the instant that hop decrypts. The Edge and Origin App hops flash <span class="red">red</span> on decrypt too — the same plaintext exposure, without a separate icon standing there.
-    </figcaption>
   </figure>
-
-  <div class="legend">
-    <span><i class="swatch safe"></i>Encrypted in transit</span>
-    <span><i class="swatch danger"></i>Decrypted here — plaintext exposure window</span>
-    <span><i class="swatch warn"></i>Attacker harvesting: wire tap (ciphertext) or hop access (plaintext)</span>
-  </div>
 </section>
 
 <!-- 2 + 3. Demo (green, the hero) and Contrast (red) — separate sections,
