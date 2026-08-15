@@ -40,10 +40,10 @@ section:last-child {
   position: fixed;
   top: 20px;
   left: 24px;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  color: var(--fg-dim);
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: 0.06em;
+  color: var(--fg);
   z-index: 10;
 }
 
