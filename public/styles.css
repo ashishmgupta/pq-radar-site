@@ -100,6 +100,15 @@ section:last-child {
   color: var(--fg-dim);
 }
 
+.hero-sub {
+  margin: 10px auto 0;
+  max-width: 56ch;
+  padding: 0 24px;
+  color: var(--fg-dim);
+  font-size: 14px;
+  text-align: center;
+}
+
 .hero-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -150,6 +159,10 @@ section:last-child {
 
   #banner p {
     font-size: 14px;
+  }
+
+  .hero-sub {
+    font-size: 13px;
   }
 }
 
