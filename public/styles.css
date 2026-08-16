@@ -195,7 +195,9 @@ section:last-child {
 }
 
 #banner a.repo-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: var(--fg);
   border: 1px solid var(--border);
   padding: 8px 14px;
@@ -205,4 +207,15 @@ section:last-child {
 
 #banner a.repo-link:hover {
   border-color: var(--fg-dim);
+}
+
+#banner a.repo-link img {
+  display: block;
+}
+
+#banner .repo-note {
+  margin: 10px 0 0;
+  max-width: 56ch;
+  color: var(--fg-dim);
+  font-size: 13px;
 }
