@@ -47,6 +47,30 @@ section:last-child {
   z-index: 10;
 }
 
+/* Top-right nav — mirrors #brand's fixed positioning on the other
+ * corner, same top offset so the two align. */
+#topnav {
+  position: fixed;
+  top: 26px;
+  right: 24px;
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  z-index: 10;
+}
+
+#topnav a {
+  color: var(--fg-dim);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 2px;
+}
+
+#topnav a:hover {
+  color: var(--fg);
+  text-decoration-color: var(--fg-dim);
+}
+
 /* 1. Banner — headline + one line, nothing else. Fixed padding, not
  * viewport-relative height — min-height:22vh left a lot of dead air on
  * tall windows since it scaled with viewport, not content. */
