@@ -43,8 +43,12 @@ section:last-child {
   font-weight: 800;
   font-size: 24px;
   letter-spacing: 0.06em;
-  color: var(--fg);
+  color: var(--fg-dim);
   z-index: 10;
+}
+
+#brand .brand-mark {
+  color: #2ecc71;
 }
 
 /* Top-right nav — mirrors #brand's fixed positioning on the other
