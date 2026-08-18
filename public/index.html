@@ -172,6 +172,29 @@
   </section>
 </div>
 
+<!-- 4. Standalone CLI: same core scanner, packaged for local/offline use.
+     The self-hosted alternative to the Worker demoed above. -->
+<section id="cli">
+  <h2 class="hero-heading">One core. Two entry points.</h2>
+  <p class="cli-intro">Same handshake classifier as the hosted tool above, published as ashishmgupta/pqradar on Docker Hub — public, no login needed to pull. Scan your own domains or CIDR ranges with no Cloudflare account, no cloud dependency, and no repo clone.</p>
+
+  <div class="code-row">
+    <img src="/images/docker-mark-ocean-blue.png" alt="Docker" class="docker-mark">
+    <pre class="code-block"><code>$ docker run --rm ashishmgupta/pqradar your-hostname.com</code></pre>
+  </div>
+
+  <p class="cli-intro">Targets are positional and auto-classified — hostnames and CIDR ranges mixed freely in one run:</p>
+
+  <div class="code-row">
+    <pre class="code-block"><code>$ docker run --rm ashishmgupta/pqradar example.com 10.0.0.0/24</code></pre>
+  </div>
+
+  <p class="cli-intro">--file targets.txt scans a list, one target per line. --out report.html writes a dark-mode HTML report instead of printing JSON to stdout — same PQRADAR.NET brand mark as this site, with summary tiles (scanned / live / dead / PQ / non-PQ / PQ-of-live%) that double as click-to-filter controls, a hostname search box, and the full OpenSSL command plus raw response per target. Built to stay usable at list-scan scale — thousands of targets.</p>
+
+  <p class="cli-note">Apache 2.0, fully open source. <a href="https://github.com/ashishmgupta/pq-radar" target="_blank" rel="noopener">View the CLI on GitHub</a> — see docs/docker-guide.html in that repo to build your own image instead of pulling.</p>
+  <p class="cli-note">v1 scans TLS/HTTPS on port 443 only. SSH and FTPS aren't in the CLI yet.</p>
+</section>
+
 <!-- Self-hosted player bundle (IIFE — exposes the global AsciinemaPlayer). -->
 <script src="/player/asciinema-player.min.js"></script>
 <script>
