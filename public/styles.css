@@ -192,17 +192,12 @@ section:last-child {
     font-size: 13px;
   }
 
-  #cli .cli-intro,
-  #cli .cli-note {
+  #cli .cli-intro {
     font-size: 13px;
   }
 
   .code-block {
     font-size: 12px;
-  }
-
-  .docker-mark {
-    width: 32px;
   }
 }
 
@@ -237,22 +232,14 @@ section:last-child {
   font-size: 13px;
 }
 
-/* 4. Standalone CLI — code blocks reuse the terminal panels' plain-
- * bordered, unrounded look (.player-frame) since they're standing in
- * for the same "this is a real command" idea. */
+/* Quick local test (#cli) — code blocks reuse the terminal panels'
+ * plain-bordered, unrounded look (.player-frame) since they're
+ * standing in for the same "this is a real command" idea. */
 #cli .cli-intro {
   margin: 10px auto 0;
   max-width: 56ch;
   color: var(--fg-dim);
   font-size: 15px;
-  text-align: center;
-}
-
-#cli .cli-note {
-  margin: 12px auto 0;
-  max-width: 56ch;
-  color: var(--fg-dim);
-  font-size: 13px;
   text-align: center;
 }
 
@@ -277,8 +264,3 @@ section:last-child {
   white-space: pre;
 }
 
-.docker-mark {
-  flex: none;
-  width: 44px;
-  height: auto;
-}
