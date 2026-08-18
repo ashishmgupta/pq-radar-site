@@ -55,7 +55,11 @@
 <section id="cli">
   <p class="cli-intro">Want to quickly test? Just pull the docker image and scan your network:</p>
   <div class="code-row">
-    <pre class="code-block"><code>$ docker run --rm ashishmgupta/pqradar &lt;YourCIDR&gt;</code></pre>
+    <img src="/images/docker-mark-ocean-blue.png" alt="Docker" class="docker-mark">
+    <pre class="code-block"><code id="cli-cmd">docker run --rm ashishmgupta/pqradar &lt;YourCIDR&gt;</code><button class="copy-btn" type="button" data-copy="cli-cmd" aria-label="Copy command">
+        <svg class="icon-copy" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M3.5 10.5H2.5A1 1 0 0 1 1.5 9.5V2.5A1 1 0 0 1 2.5 1.5H9.5A1 1 0 0 1 10.5 2.5V3.5"/></svg>
+        <svg class="icon-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8.5L6.5 12L13 4.5"/></svg>
+      </button></pre>
   </div>
 </section>
 
@@ -197,6 +201,20 @@
 
   AsciinemaPlayer.create("/casts/green.cast", document.getElementById("player-green"), demoOpts);
   AsciinemaPlayer.create("/casts/red.cast", document.getElementById("player-red"), demoOpts);
+</script>
+
+<!-- Click-to-copy for the CLI quickstart command. -->
+<script>
+  document.querySelectorAll(".copy-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var target = document.getElementById(btn.dataset.copy);
+      if (!target) return;
+      navigator.clipboard.writeText(target.textContent).then(function () {
+        btn.classList.add("copied");
+        setTimeout(function () { btn.classList.remove("copied"); }, 1200);
+      });
+    });
+  });
 </script>
 </body>
 </html>

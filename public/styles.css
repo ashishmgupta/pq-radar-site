@@ -199,6 +199,10 @@ section:last-child {
   .code-block {
     font-size: 12px;
   }
+
+  .docker-mark {
+    width: 32px;
+  }
 }
 
 .player-frame {
@@ -252,6 +256,10 @@ section:last-child {
 }
 
 .code-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   margin: 0;
   min-width: 0;
   border: 1px solid var(--border);
@@ -261,6 +269,51 @@ section:last-child {
   font-size: 14px;
   text-align: left;
   overflow-x: auto;
+}
+
+.code-block code {
   white-space: pre;
+}
+
+.docker-mark {
+  flex: none;
+  width: 44px;
+  height: auto;
+}
+
+.copy-btn {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--fg-dim);
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  color: var(--fg);
+}
+
+.copy-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.copy-btn .icon-check {
+  display: none;
+}
+
+.copy-btn.copied .icon-copy {
+  display: none;
+}
+
+.copy-btn.copied .icon-check {
+  display: block;
+  color: #2ecc71;
 }
 
